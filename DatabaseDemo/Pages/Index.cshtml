@@ -1,5 +1,7 @@
 ﻿@page
 @model IndexModel
+@using Microsoft.Data.SqlClient;
+
 @{
     ViewData["Title"] = "Home page";
 }
@@ -8,3 +10,16 @@
     <h1 class="display-4">Welcome</h1>
     <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
+
+
+
+<h1>Database Connection Example</h1>
+<form method="post">
+    <button asp-page-handler="ConnectToDatabase">Connect to Database</button>
+</form>
+
+
+
+@Html.Raw(Model.fulltable)
+
+
